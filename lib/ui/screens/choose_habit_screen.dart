@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habit_tracker/ui/screens/main_screen.dart';
 
 class ChooseHabitScreen extends StatefulWidget {
   const ChooseHabitScreen({super.key});
@@ -301,7 +302,9 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                 height: 60,
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen()));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
