@@ -17,7 +17,7 @@ class DateCard extends StatelessWidget {
         height: 90,
         width: 65,
         decoration: BoxDecoration(
-            color: todayDate ? Color(0xFFFC5B32) : Colors.white,
+            color: todayDate ? Colors.orangeAccent : Colors.white,
             borderRadius: BorderRadius.circular(15),
             border: Border.all(color: todayDate ? Colors.transparent : Colors.black12)
         ),
@@ -26,13 +26,13 @@ class DateCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(day, style: TextStyle(
-                  color: todayDate ? Colors.white : Colors.black54,
+                  color: todayDate ? Colors.black : Colors.black54,
                   fontSize: 13,
-                  fontWeight: FontWeight.w400
+                  fontWeight: FontWeight.w500
               ),),
               const SizedBox(height: 10),
               Text(date, style: TextStyle(
-                  color: todayDate ? Colors.white : Colors.black54,
+                  color: todayDate ? Colors.black : Colors.black54,
                   fontSize: 22,
                   fontWeight: FontWeight.w600
               ),),

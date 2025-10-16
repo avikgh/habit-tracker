@@ -31,9 +31,9 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
             children: [
               const SizedBox(height: 5),
               const Text('Choose Habit', style: TextStyle(
-                color: Colors.black,
+                color: Colors.orangeAccent,
                 fontSize: 35,
-                fontWeight: FontWeight.w600
+                fontWeight: FontWeight.bold
               ),),
               const SizedBox(height: 10),
               const Text('Choose your daily habit. You can choose more than one', style: TextStyle(
@@ -53,7 +53,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected1 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected1 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected1 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -84,7 +84,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected2 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected2 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected2 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -115,7 +115,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected3 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected3 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected3 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -146,7 +146,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                         width: 150,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: _isSelected4 ? Color(0xFFF8EDE6) : Colors.white70,
+                            color: _isSelected4 ? Colors.orangeAccent.shade100 : Colors.white70,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: _isSelected4 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                         ),
@@ -177,7 +177,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected5 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected5 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected5 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -208,7 +208,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected6 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected6 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected6 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -239,7 +239,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected7 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected7 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected7 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -270,7 +270,7 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                           width: 150,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: _isSelected8 ? Color(0xFFF8EDE6) : Colors.white70,
+                              color: _isSelected8 ? Colors.orangeAccent.shade100 : Colors.white70,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: _isSelected8 ? Color(0xFFD4917F) : Colors.black12, width: 2)
                           ),
@@ -306,15 +306,15 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen()));
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: Colors.orangeAccent,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       )
                   ),
                   child: const Text('Get Started!', style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18
                   ),),
                 ),
               ),
