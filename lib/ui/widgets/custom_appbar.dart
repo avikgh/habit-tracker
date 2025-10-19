@@ -9,37 +9,39 @@ AppBar buildAppBar(String title) {
         IconButton(
           onPressed: () {},
           icon: Icon(
-            Icons.grid_view_outlined, size: 25, color: Colors.black,),
+            Icons.grid_view_outlined,
+            size: 25,
+            color: Colors.black,
+          ),
           style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
-                side: BorderSide(color: Colors.black)
-            ),
+                side: BorderSide(color: Colors.black)),
             shadowColor: Colors.black,
           ),
         ),
       ],
     ),
-    title: Text(title , style: TextStyle(
-        color: Colors.black87,
-        fontSize: 18,
-        fontWeight: FontWeight.w600
-    ),),
+    title: Text(
+      title,
+      style: TextStyle(
+          color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w600),
+    ),
     centerTitle: true,
     actions: [
       IconButton(
         onPressed: () {},
-        icon: Icon(
-            Icons.calendar_month_outlined, size: 25, color: Colors.black),
+        icon:
+            Icon(Icons.calendar_month_outlined, size: 25, color: Colors.black),
         style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
-                side: BorderSide(color: Colors.black)
-            ),
-            shadowColor: Colors.black
-        ),
+                side: BorderSide(color: Colors.black)),
+            shadowColor: Colors.black),
       ),
-      const SizedBox(width: 8,)
+      const SizedBox(
+        width: 8,
+      )
     ],
   );
 }

@@ -10,6 +10,16 @@ class HabitTracker extends StatelessWidget {
       title: 'Habit Tracker',
       debugShowCheckedModeBanner: false,
       home: ChooseHabitScreen(),
+      theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.orangeAccent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

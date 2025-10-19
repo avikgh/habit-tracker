@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habit_tracker/ui/screens/main_screen.dart';
+import '../widgets/choose_habit_card.dart';
+import '../widgets/custom_elevated_button.dart';
 
 class ChooseHabitScreen extends StatefulWidget {
   const ChooseHabitScreen({super.key});
@@ -30,17 +32,21 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 5),
-              const Text('Choose Habit', style: TextStyle(
-                color: Colors.orangeAccent,
-                fontSize: 35,
-                fontWeight: FontWeight.bold
-              ),),
+              const Text(
+                'Choose Habit',
+                style: TextStyle(
+                    color: Colors.orangeAccent,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 10),
-              const Text('Choose your daily habit. You can choose more than one', style: TextStyle(
-                color: Colors.grey,
-                fontSize: 15,
-                fontWeight: FontWeight.w400
-              ),),
+              const Text(
+                'Choose your daily habit. You can choose more than one',
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400),
+              ),
               const SizedBox(height: 40),
               Expanded(
                 child: Wrap(
@@ -48,248 +54,57 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                   runSpacing: 30,
                   children: [
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected1 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected1 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('🏃‍♂️', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Work Out', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Work Out', '🏃‍', _isSelected1),
                       onTap: () {
                         _isSelected1 = !_isSelected1;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected2 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected2 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('🍔', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Eat Food', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Eat Food', '🍔', _isSelected2),
                       onTap: () {
                         _isSelected2 = !_isSelected2;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected3 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected3 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('🎤', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Music', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Music', '🎤', _isSelected3),
                       onTap: () {
                         _isSelected3 = !_isSelected3;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                        height: 100,
-                        width: 150,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: _isSelected4 ? Colors.orangeAccent.shade100 : Colors.white70,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: _isSelected4 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('🎨', style: TextStyle(
-                                fontSize: 40
-                            ),),
-                            const SizedBox(height: 5,),
-                            Text('Arts and Design', style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                            ),),
-                          ],
-                        )
-                      ),
+                      child:
+                          buildHabitCard('Arts and Design', '🎨', _isSelected4),
                       onTap: () {
                         _isSelected4 = !_isSelected4;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected5 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected5 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('🗺️', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Traveling', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Traveling', '🗺️', _isSelected5),
                       onTap: () {
                         _isSelected5 = !_isSelected5;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected6 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected6 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('📚', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Read Book', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Read Book', '📚', _isSelected6),
                       onTap: () {
                         _isSelected6 = !_isSelected6;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected7 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected7 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('🎮', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Gaming', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Gaming', '🎮', _isSelected7),
                       onTap: () {
                         _isSelected7 = !_isSelected7;
                         setState(() {});
                       },
                     ),
                     GestureDetector(
-                      child: Container(
-                          height: 100,
-                          width: 150,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _isSelected8 ? Colors.orangeAccent.shade100 : Colors.white70,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: _isSelected8 ? Color(0xFFD4917F) : Colors.black12, width: 2)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('🔧', style: TextStyle(
-                                  fontSize: 40
-                              ),),
-                              const SizedBox(height: 5,),
-                              Text('Mechanic', style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600
-                              ),),
-                            ],
-                          )
-                      ),
+                      child: buildHabitCard('Mechanic', '🔧', _isSelected8),
                       onTap: () {
                         _isSelected8 = !_isSelected8;
                         setState(() {});
@@ -298,25 +113,12 @@ class _ChooseHabitScreenState extends State<ChooseHabitScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 60,
-                width: double.maxFinite,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orangeAccent,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      )
-                  ),
-                  child: const Text('Get Started!', style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18
-                  ),),
-                ),
+              CustomElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => MainScreen()));
+                },
+                buttonName: 'Get Started!',
               ),
             ],
           ),
