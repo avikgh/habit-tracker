@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar buildAppBar(String title) {
+AppBar buildAppBar(String title, IconData icon) {
   return AppBar(
     backgroundColor: Colors.orangeAccent,
     leading: Row(
@@ -32,7 +32,7 @@ AppBar buildAppBar(String title) {
       IconButton(
         onPressed: () {},
         icon:
-            Icon(Icons.calendar_month_outlined, size: 25, color: Colors.black),
+            Icon(icon, size: 25, color: Colors.black),
         style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
