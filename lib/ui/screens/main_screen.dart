@@ -15,19 +15,19 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 
   int _activeScreen = 0;
-  final List<dynamic> _screenList = [
+  final List<Widget> _screenList = const [
     HomeScreen(),
     CaloriesStatusScreen(),
-    ProfileScreen()
+    ProfileScreen(),
   ];
 
-  final List<String> _appBarTitle = [
+  final List<String> _appBarTitle = const [
     'Tuesday, 06',
     'Calories Status',
     'Profile'
   ];
 
-  final List<IconData> _appBarAction = [
+  final List<IconData> _appBarAction = const [
     Icons.calendar_month_outlined,
     Icons.calendar_month_outlined,
     Icons.logout
@@ -38,11 +38,16 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(_appBarTitle[_activeScreen], _appBarAction[_activeScreen]),
-      body: _screenList[_activeScreen],
+      body: IndexedStack(
+        index: _activeScreen,
+        children: _screenList,
+      ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
         color: Colors.orangeAccent,
         height: 60,
+        animationDuration: const Duration(milliseconds: 300),
+        animationCurve: Curves.easeInOut,
         items: <Widget>[
           Icon(Icons.home, size: 30),
           Icon(Icons.bar_chart, size: 30),

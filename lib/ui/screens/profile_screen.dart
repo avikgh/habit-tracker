@@ -13,7 +13,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final List<double> values = [220, 340, 150, 280, 235, 120];
+  final List<double> values = [5, 4, 8, 3, 4, 2];
   static const int highlightedIndex = 4;
 
   @override
@@ -170,7 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 getTooltipItem: (group,
                                                     groupIndex, rod, rodIndex) {
                                                   return BarTooltipItem(
-                                                    '🔥 Burn\n${rod.toY.toStringAsFixed(0)} Cal',
+                                                    '${rod.toY.toStringAsFixed(0)} Task\n✅',
                                                     const TextStyle(
                                                       color: Colors.black,
                                                       fontWeight:
