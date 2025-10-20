@@ -43,13 +43,13 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Notification!', style: TextStyle(
+                        const Text('Notification!', style: TextStyle(
                           color: Colors.black87,
                           fontSize: 16,
                           fontWeight: FontWeight.w600
                         ),),
                         const SizedBox(height: 4),
-                        Text('Now is the time to read the book,\nou can change it in settings ', style: TextStyle(
+                        Text('Now is the time to read the book,\nyou can change it in settings ', style: TextStyle(
                             color: Colors.black87,
                             fontSize: 13,
                             fontWeight: FontWeight.w400
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: 294,
+                    right: 0,
                     child: IconButton(
                       onPressed: (){},
                       icon: Icon(Icons.error_outline_rounded, size: 22, color: Colors.black87,),
@@ -90,7 +90,7 @@ class HomeScreen extends StatelessWidget {
               spacing: 20,
               runSpacing: 20,
               children: [
-                DoneHabitCard(title: 'Bicycle', description: '07:00 for 10Km', emoji: '🚴‍', color: Color(0xFFEBF5ED),),
+                DoneHabitCard(title: 'Bicycle', description: '07:00 for 10Km', emoji: '🚴‍♀️‍', color: Color(0xFFEBF5ED),),
                 DoneHabitCard(title: 'Running', description: '12:00 for 5Km', emoji: '🏃‍♂️', color: Color(0xFFFAEDE6),),
                 DoneHabitCard(title: 'Work Out', description: '06:00 for 1Hr', emoji: '🏋️‍♂️', color: Color(0xFFF8FAE6),),
                 DoneHabitCard(title: 'Read Book', description: '11:00 for 30Min', emoji: '📚', color: Color(0xFFF7EDF5))

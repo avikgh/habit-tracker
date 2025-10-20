@@ -100,9 +100,11 @@ class _CaloriesStatusScreenState extends State<CaloriesStatusScreen> {
                           fontWeight: FontWeight.w400),
                     ),
                     trailing: Column(
-                      children: [
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
                         Icon(Icons.local_fire_department, color: Colors.orange),
-                        Text('300 Cal')
+                        SizedBox(height: 4),
+                        Text('300 Cal', style: TextStyle(fontSize: 13)),
                       ],
                     ),
                   ),
@@ -149,7 +151,7 @@ class _CaloriesStatusScreenState extends State<CaloriesStatusScreen> {
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: const Text(
-              "7,830 Calls",
+              "7,830 Cals",
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.orange,
@@ -201,7 +203,7 @@ class _CaloriesStatusScreenState extends State<CaloriesStatusScreen> {
               ),
               SizedBox(width: 4),
               Text(
-                "${values[highlightedIndex]} Calls",
+                "${values[highlightedIndex]} Cals",
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 14,

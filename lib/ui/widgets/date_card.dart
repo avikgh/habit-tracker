@@ -12,7 +12,7 @@ class DateCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 13.0),
+      padding: const EdgeInsets.only(right: 8.0),
       child: Container(
         height: 90,
         width: 65,
