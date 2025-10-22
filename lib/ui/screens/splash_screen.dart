@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habit_tracker/ui/screens/auth/sign_in_screen.dart';
 import 'package:habit_tracker/ui/screens/choose_habit_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> moveToTheChooseHabitScreen() async {
     await Future.delayed(Duration(seconds: 3));
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => ChooseHabitScreen()));
+        context, MaterialPageRoute(builder: (context) => SignInScreen()));
   }
 
   @override
