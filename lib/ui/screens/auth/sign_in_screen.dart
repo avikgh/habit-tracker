@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_tracker/ui/screens/auth/sign_up_screen.dart';
 import 'package:habit_tracker/ui/screens/choose_habit_screen.dart';
 import 'package:habit_tracker/ui/widgets/custom_elevated_button.dart';
 import 'package:habit_tracker/utilities/app_constraints.dart';
@@ -62,9 +64,14 @@ class _SignInScreenState extends State<SignInScreen> {
                         _isPasswordVisible = !_isPasswordVisible;
                         setState(() {});
                       },
-                      child: Icon(_isPasswordVisible
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined),
+                      child: Icon(
+                        _isPasswordVisible
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: _isPasswordVisible
+                            ? Colors.grey
+                            : Colors.orangeAccent,
+                      ),
                     )),
               ),
             ),
@@ -81,6 +88,32 @@ class _SignInScreenState extends State<SignInScreen> {
                 buttonName: 'Sign In',
               ),
             ),
+            const SizedBox(height: 15),
+            RichText(
+              text: TextSpan(
+                text: 'Don\'t have an account? ',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+                children: [
+                  TextSpan(
+                    text: 'Sign Up',
+                    style: TextStyle(
+                        color: Colors.orangeAccent,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpScreen()));
+                      },
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
