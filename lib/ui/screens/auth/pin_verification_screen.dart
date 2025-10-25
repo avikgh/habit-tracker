@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:habit_tracker/ui/screens/auth/pin_verification_screen.dart';
 import 'package:habit_tracker/ui/screens/choose_habit_screen.dart';
 import 'package:habit_tracker/ui/widgets/custom_elevated_button.dart';
-import 'package:habit_tracker/utilities/app_constraints.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
-class ForgetPasswordScreen extends StatefulWidget {
-  const ForgetPasswordScreen({super.key});
+class PinVericationScreen extends StatefulWidget {
+  const PinVericationScreen({super.key});
 
   @override
-  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
+  State<PinVericationScreen> createState() => _PinVericationScreenState();
 }
 
-class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+class _PinVericationScreenState extends State<PinVericationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,18 +28,20 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: TextFormField(
-                validator: (value) {
-                  if (value?.trim().isEmpty ?? true) {
-                    return 'Enter an email address';
-                  }
-                  if (AppConstrains.emailRegExp.hasMatch(value!) == false) {
-                    return 'Enter a valid email address';
-                  }
-                  return null;
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: InputDecoration(hintText: 'Email'),
+              child: PinCodeTextField(
+                keyboardType: TextInputType.number,
+                length: 6,
+                obscureText: false,
+                animationType: AnimationType.fade,
+                pinTheme: PinTheme(
+                  shape: PinCodeFieldShape.box,
+                  borderRadius: BorderRadius.circular(10),
+                  fieldHeight: 50,
+                  fieldWidth: 40,
+                  activeFillColor: Colors.transparent,
+                  activeColor: Colors.green,
+                  selectedColor: Colors.orangeAccent
+                ), appContext: context,
               ),
             ),
             const SizedBox(height: 30),
@@ -51,9 +52,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PinVericationScreen()));
+                          builder: (context) => ChooseHabitScreen()));
                 },
-                buttonName: 'Send OTP',
+                buttonName: 'Verify',
               ),
             ),
           ],

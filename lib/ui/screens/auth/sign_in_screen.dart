@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_tracker/ui/screens/auth/forget_password_screen.dart';
 import 'package:habit_tracker/ui/screens/auth/sign_up_screen.dart';
 import 'package:habit_tracker/ui/screens/choose_habit_screen.dart';
 import 'package:habit_tracker/ui/widgets/custom_elevated_button.dart';
@@ -75,9 +76,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     )),
               ),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 75),
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: CustomElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
@@ -89,6 +90,20 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             ),
             const SizedBox(height: 15),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ForgetPasswordScreen()));
+              },
+              child: Text(
+                'Forget Password?',
+                style: TextStyle(color: Colors.orangeAccent),
+              ),
+              style: TextButton.styleFrom(
+                  overlayColor: Colors.orangeAccent.withOpacity(0.1)),
+            ),
             RichText(
               text: TextSpan(
                 text: 'Don\'t have an account? ',
