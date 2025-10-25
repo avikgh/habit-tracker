@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habit_tracker/ui/screens/choose_habit_screen.dart';
+import 'package:habit_tracker/ui/screens/auth/change_password_screen.dart';
 import 'package:habit_tracker/ui/widgets/custom_elevated_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -52,7 +52,7 @@ class _PinVericationScreenState extends State<PinVericationScreen> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ChooseHabitScreen()));
+                          builder: (context) => ChangePasswordScreen()));
                 },
                 buttonName: 'Verify',
               ),

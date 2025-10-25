@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:habit_tracker/ui/screens/auth/pin_verification_screen.dart';
-import 'package:habit_tracker/ui/screens/choose_habit_screen.dart';
 import 'package:habit_tracker/ui/widgets/custom_elevated_button.dart';
 import 'package:habit_tracker/utilities/app_constraints.dart';
 
