@@ -1,7 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:habit_tracker/ui/screens/calories_status_screen.dart';
+import 'package:habit_tracker/ui/screens/event_calender_screen.dart';
 import 'package:habit_tracker/ui/screens/profile_screen.dart';
+import 'package:intl/intl.dart';
 import '../widgets/custom_appbar.dart';
 import 'home_screen.dart';
 
@@ -13,7 +15,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-
   int _activeScreen = 0;
   final List<Widget> _screenList = const [
     HomeScreen(),
@@ -21,11 +22,18 @@ class _MainScreenState extends State<MainScreen> {
     ProfileScreen(),
   ];
 
-  final List<String> _appBarTitle = const [
-    'Tuesday, 06',
-    'Calories Status',
-    'Profile'
-  ];
+  late List<String> _appBarTitle;
+
+  @override
+  void initState() {
+    super.initState();
+    _appBarTitle = [
+      DateFormat('EEEE, dd').format(DateTime.now()),
+      'Calories Status',
+      'Profile'
+    ];
+  }
+
 
   final List<IconData> _appBarAction = const [
     Icons.calendar_month_outlined,
@@ -37,7 +45,18 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(_appBarTitle[_activeScreen], _appBarAction[_activeScreen]),
+      appBar: CustomAppBar(
+        title: _appBarTitle[_activeScreen],
+        icon: _appBarAction[_activeScreen],
+        onTap: () {
+          if (_activeScreen == 2) {
+            print('Logout');
+          } else {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => EventCalenderScreen()));
+          }
+        },
+      ),
       body: IndexedStack(
         index: _activeScreen,
         children: _screenList,
